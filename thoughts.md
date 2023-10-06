@@ -6,7 +6,6 @@
    - place
    - total
    - category separated by comma
-   - total
    - additional comments
 
 2. Able to pull details basing on date
