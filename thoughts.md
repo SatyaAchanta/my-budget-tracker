@@ -10,3 +10,6 @@
 
 2. Able to pull details basing on date
    - user should be able to select date range to see list of all expenses made during those days
+
+
+3. Use jotai/recoil for state management

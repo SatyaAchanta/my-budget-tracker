@@ -14,13 +14,13 @@ export default function App() {
         </TabList>
 
         <TabPanels>
-          <TabPanel>
+          <TabPanel key={"expenses"}>
             <Expenses />
           </TabPanel>
-          <TabPanel>
+          <TabPanel key={"history"}>
             <History />
           </TabPanel>
-          <TabPanel>
+          <TabPanel key={"analytics"}>
             <Analytics />
           </TabPanel>
         </TabPanels>
