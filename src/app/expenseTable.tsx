@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Table,
   Thead,
@@ -10,19 +12,18 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 import { iExpenseDetail } from "..";
+import { useAtom } from "jotai";
+import { expenseAtom } from "./_context/expenseAtom";
 
-export const ExpensesTable = ({
-  allExpenses,
-}: {
-  allExpenses: iExpenseDetail[];
-}) => {
+export function ExpensesTable() {
+  const [expenses] = useAtom(expenseAtom);
   return (
     <>
       <TableContainer>
         <Table variant="simple">
           <TableCaption>All the purchases you made</TableCaption>
           <Thead>
-            <Tr>
+            <Tr key={"table-row"}>
               <Th>Purchase Date</Th>
               <Th>Name</Th>
               <Th>Place</Th>
@@ -34,10 +35,10 @@ export const ExpensesTable = ({
             </Tr>
           </Thead>
           <Tbody>
-            {allExpenses.map((expense) => {
+            {expenses.map((expense, index) => {
               return (
                 <>
-                  <Tr>
+                  <Tr key={index}>
                     <Td>{expense.dateOfPurchase.toLocaleDateString()}</Td>
                     <Td>{expense.name}</Td>
                     <Td>{expense.place}</Td>
@@ -55,4 +56,4 @@ export const ExpensesTable = ({
       </TableContainer>
     </>
   );
-};
+}
